@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | Task 8</title>
+
+    <style>
+        th {
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        .input-group {
+            width: 70%;
+        }
+        .main-heading{
+            color: blue;
+        }
+        button{
+            font-family: serif;
+            font-weight: 900;
+            color: white;
+            border-radius: 10px;
+            background-color: red;
+            border: 3px solid black;
+        }
+        table {
+            margin-top: 50px;
+            padding: 10px;
+            width: 700px;
+            background: #eedea3;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to top, #EF629F, #eee1a3);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to top, #EF629F, #eedea3);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+    </style>
+</head>
+
+<body>
+    <div align="center" class="main">
+        <form action="https://www.ethnus.com" onsubmit="return validate()">
+            <table cellspacing="10">
+                <tr>
+                    <td></td>
+                    <td>
+                        <h2 align="center" class="input-group main-heading">Registration Form</h2>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <label>First Name</label>
+                    </th>
+                    <td>
+                        <input id="i1" class="input-group" type="text">
+                        <span id="m1" style="color: red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Last Name</label>
+                    </th>
+                    <td>
+                        <input id="i2" class="input-group" type="text">
+                        <span id="m2" style="color: red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Email</label>
+                    </th>
+                    <td>
+                        <input id="i3" class="input-group" type="email">
+                        <span id="m3" style="color: red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Password</label>
+                    </th>
+                    <td>
+                        <input id="i4" class="input-group" type="password">
+                        <span id="m4" style="color: red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Re-enter Password</label>
+                    </th>
+                    <td>
+                        <input id="i5" class="input-group" type="password">
+                        <span id="m5" style="color: red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th rowspan="2">
+                        <label>Gender</label>
+                    </th>
+                    <td>
+                        <input type="radio" name="gender"> Male
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="gender"> Female
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Age</label>
+                    </th>
+                    <td>
+                        <input id="i6" class="input-group" type="number">
+                        <span id="m6" style="color: red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Address</label>
+                    </th>
+                    <td>
+                        <textarea id="i7" class="input-group" rows="4"></textarea>
+                        <span id="m7" style="color: red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>State</label>
+                    </th>
+                    <td>
+                        <input id="i8" class="input-group" type="text">
+                        <span id="m8" style="color: red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Country</label>
+                    </th>
+                    <td>
+                        <select>
+                            <option>Choose your country</option>
+                            <option>India</option>
+                            <option>Australia</option>
+                            <option>UAE</option>
+                            <option>Sri Lanka</option>
+                            <option>Japan</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Languages Known</label>
+                    </th>
+                    <td>
+                        <input type="checkbox"> English
+                        <input type="checkbox"> Kannada
+                        <input type="checkbox"> Hindi
+                        <input type="checkbox"> Telugu
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="checkbox">Hereby I declare all the given details are true.
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="right">
+                        Log in to <a href="https://www.ethnus.com">Ethnus</a> website
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div align="center" class="input-group">
+                            <button type="submit">REGISTER</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+
+    </div>
+
+
+    <script>
+        function validate() {
+            var firstname = document.getElementById("i1").value;
+            var lastname = document.getElementById("i2").value;
+            var email = document.getElementById("i3").value;
+            var pwd = document.getElementById("i4").value;
+            var repwd = document.getElementById("i5").value;
+            var age = document.getElementById("i6").value;
+            var address = document.getElementById("i7").value;
+            var state = document.getElementById("i8").value;
+            var flag = 0;
+
+            if (firstname.length < 5) {
+                document.getElementById("m1").innerHTML = "Poor";
+                flag = 1;
+            } else {
+                document.getElementById("m1").innerHTML = "";
+            }
+
+            if (lastname.length < 5) {
+                document.getElementById("m2").innerHTML = "Poor";
+                flag = 1;
+            } else {
+                document.getElementById("m2").innerHTML = "";
+            }
+
+            if (email.length < 5) {
+                document.getElementById("m3").innerHTML = "Poor";
+                flag = 1;
+            } else {
+                document.getElementById("m3").innerHTML = "";
+            }
+
+            if (pwd.length < 5) {
+                document.getElementById("m4").innerHTML = "Poor";
+                flag = 1;
+            } else {
+                document.getElementById("m4").innerHTML = "";
+            }
+
+            if (repwd.length < 5 || pwd != repwd) {
+                document.getElementById("m5").innerHTML = "Poor or Mismatch";
+                flag = 1;
+            } else {
+                document.getElementById("m5").innerHTML = "";
+            }
+
+            if (age < 10) {
+                document.getElementById("m6").innerHTML = "Poor";
+                flag = 1;
+            } else {
+                document.getElementById("m6").innerHTML = "";
+            }
+
+            if (address.length < 5) {
+                document.getElementById("m7").innerHTML = "Poor";
+                flag = 1;
+            } else {
+                document.getElementById("m7").innerHTML = "";
+            }
+
+            if (state.length < 5) {
+                document.getElementById("m8").innerHTML = "Poor";
+                flag = 1;
+            } else {
+                document.getElementById("m8").innerHTML = "";
+            }
+
+            if (flag == 1) {
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>

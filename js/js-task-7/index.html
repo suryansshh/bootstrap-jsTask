@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | Task 7</title>
+    <style>
+        #animatedDiv {
+            width: 300px;
+            position: relative;
+            left: 0;
+            animation: slideRight 5s linear infinite;
+            animation-play-state: paused;
+        }
+
+        @keyframes slideRight {
+            to {
+                transform: translateX(1800px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://cdn-icons-png.flaticon.com/512/164/164714.png" id="animatedDiv" class="animate">
+    <div align="center" style="margin-top: 100px;">
+        <h2 style="color: navy">Click the following buttons to handle animation</h2>
+    <button id="start">Start</button>
+    <button style="margin-left: 10px;" id="stop">Stop</button>
+    </div>
+    
+
+
+    <script>
+        const animatedDiv = document.getElementById('animatedDiv');
+        const startButton = document.getElementById('start');
+        const stopButton = document.getElementById('stop');
+
+        function startAnimation() {
+                animatedDiv.style.animationPlayState = 'running';
+        }
+
+        function stopAnimation() {
+                animatedDiv.style.animationPlayState = 'paused';
+        }
+
+        startButton.addEventListener('click', startAnimation);
+        stopButton.addEventListener('click', stopAnimation);
+
+
+    </script>
+</body>
+
+</html>

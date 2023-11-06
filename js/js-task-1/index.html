@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | Task 1</title>
+</head>
+
+<body>
+    <script>
+        function numRev(userInput) {
+            var intValue = parseInt(userInput);
+
+            if (!isNaN(intValue)) {
+                var reversedNum = userInput.split('').reverse().join('');
+                reversedNum = parseInt(reversedNum);
+                alert("Reversed number is: " + reversedNum);
+                console.log("Reversed number is: " + reversedNum);
+            } else {
+                alert("Invalid input. Please enter a valid integer.");
+                console.log("Invalid input. Please enter a valid integer.");
+            }
+        }
+
+        var userInput = prompt("Enter a number to be reversed: ");
+        numRev(userInput);
+
+    </script>
+</body>
+
+</html>

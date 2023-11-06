@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | Task 3</title>
+</head>
+
+<body>
+
+
+    <form>
+        <table>
+            <tr>
+                <td><label>1st Number: </label></td>
+                <td><input id="firstNum" type="number"></td>
+            </tr>
+            <tr>
+                <td><label>2nd Number: </label></td>
+                <td><input id="secondNum" type="number"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button onclick="multiply()" type="button">Multiply</button>
+                    <button onclick="divide()" type="button">Divide</button>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <p id="result"></p>
+
+    </form>
+
+    <script>
+
+        function multiply(){
+            let firstNum = document.getElementById("firstNum").value;
+            let secondNum = document.getElementById("secondNum").value;
+            let result = firstNum * secondNum;
+
+            document.getElementById("result").innerHTML="The result is:<br>"+result;
+        }
+
+        function divide(){
+            let firstNum = document.getElementById("firstNum").value;
+            let secondNum = document.getElementById("secondNum").value;
+            let result = firstNum / secondNum;
+
+            document.getElementById("result").innerHTML="The result is:<br>"+result;
+        }
+
+    </script>
+</body>
+
+</html>

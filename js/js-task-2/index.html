@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | Task 2</title>
+</head>
+
+<body>
+    <script>
+        function sortWord(word){
+            return word.split('').sort().join('');
+        }
+
+        var userInput = prompt("Enter a string to sort: ");
+        alert("Sorted string is: " + sortWord(userInput));
+    </script>
+</body>
+
+</html>

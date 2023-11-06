@@ -1,0 +1,30 @@
+body {
+    padding-top: 100px;
+}
+
+.main-form {
+    padding: 5%;
+    margin: auto;
+    width: 900px;
+    background-color: rgb(243, 243, 243);
+    border-radius: 20px;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+    justify-content: space-evenly;
+}
+
+.form-label {
+    font-weight: 700;
+}
+
+.footer-button {
+    font-weight: 600;
+    color: white;
+}

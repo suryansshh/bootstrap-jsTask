@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | Task 5</title>
+    <style>
+        .turn-red {
+            border-radius: 5px;
+            border: 2px solid red!important;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label>Name:</label>
+                </td>
+                <td>
+                    <input id="i1" type="text" placeholder="Enter your name" />
+                    <span id="s1" style="color: red; margin-left: 10px;"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Email:</label>
+                </td>
+                <td>
+                    <input id="i2" type="email" placeholder="Enter email address" />
+                    <span id="s2" style="color: red; margin-left: 10px;"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Website:</label>
+                </td>
+                <td>
+                    <input id="i3" type="text" placeholder="Enter URL" />
+                    <span id="s3" style="color: red; margin-left: 10px;"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Message:</label>
+                </td>
+                <td>
+                    <textarea id="i4" type="text" rows="2"></textarea>
+                    <span id="s4" style="color: red; margin-left: 10px;"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button onclick="validate()" type="button">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+
+
+    <script>
+        function validate() {
+            var user = document.getElementById("i1");
+            var em = document.getElementById("i2");
+            var web = document.getElementById("i3");
+            var msg = document.getElementById("i4");
+
+            var username = user.value;
+            var email = em.value;
+            var website = web.value;
+            var message = msg.value;
+
+            if (username.length == 0) {
+                document.getElementById("s1").innerHTML = "This field is required";
+                user.classList.add('turn-red');
+
+            } else {
+                document.getElementById("s1").innerHTML = "";
+                user.classList.remove('turn-red');
+            }
+
+            if (email.length == 0) {
+                document.getElementById("s2").innerHTML = "A valid email address is required";
+                em.classList.add('turn-red');
+            } else {
+                document.getElementById("s2").innerHTML = "";
+                em.classList.remove('turn-red');
+            }
+
+            if (website.length == 0) {
+                document.getElementById("s3").innerHTML = "A valid url is required";
+                web.classList.add('turn-red');
+            } else {
+                document.getElementById("s3").innerHTML = "";
+                web.classList.remove('turn-red');
+            }
+
+            if (message.length == 0) {
+                document.getElementById("s4").innerHTML = "This field is required";
+                msg.classList.add('turn-red');
+            } else {
+                document.getElementById("s4").innerHTML = "";
+                msg.classList.remove('turn-red');
+            }
+        }
+    </script>
+</body>
+
+</html>

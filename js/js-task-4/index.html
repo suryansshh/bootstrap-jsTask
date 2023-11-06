@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | Task 4</title>
+</head>
+
+<body>
+    <button onclick="showDate()">Show Date</button>
+    <p id="date"></p>
+    <br>
+    <button onclick="showTime()">Show Time</button>
+    <p id="time"></p>
+
+
+    <script>
+
+        function showDate() {
+            var para = document.getElementById("date");
+            var date = new Date();
+
+            const monthNames = [
+                'January', 'February', 'March', 'April',
+                'May', 'June', 'July', 'August',
+                'September', 'October', 'November', 'December'
+            ];
+
+            const day = date.getDate();
+            const month = monthNames[date.getMonth()];
+            const year = date.getFullYear();
+
+            var formatDate = `${day}/${month}/${year}`;
+
+            para.innerHTML = formatDate;
+        }
+
+        function showTime() {
+            var para = document.getElementById("time");
+            var time = new Date();
+
+            para.innerHTML = time;
+        }
+
+    </script>
+
+
+</body>
+
+</html>
